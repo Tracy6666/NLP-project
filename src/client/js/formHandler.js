@@ -52,8 +52,26 @@ function updateUI(data, formText) {
         ${getList(data.sentimented_concept_list)}
     </div>
     `;
+    const htmlTable = `
+    <div class="result-section">
+        <h2>Overall results</h2>
+        <table class='data-table'>
+            <tr>
+                <th>Score tag</th>
+                <th>Agreement</th>
+                <th>Confidence</th>
+            </tr>
+            <tr>
+                <td>${data.score_tag}</td>
+                <td>${data.agreement}</td>
+                <td>${data.confidence}</td>
+            </tr>
+        </table>
+    </div>
+    `;
 
     const htmlOutput = `
+        ${htmlTable}
         ${sentimentedEntityList}
         ${sentimentedConceptList}
     `;
