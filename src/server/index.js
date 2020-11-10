@@ -5,7 +5,7 @@ const API_KEY = process.env.API_KEY;
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
-const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
+
 const app = express()
 const bodyParser = require("body-parser");
 app.use(bodyParser.text());

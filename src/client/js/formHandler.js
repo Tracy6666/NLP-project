@@ -75,5 +75,6 @@ function updateUI(data, formText) {
         ${sentimentedEntityList}
         ${sentimentedConceptList}
     `;
+    document.getElementById("results").innerHTML = htmlOutput;
 }
 export { handleSubmit };
