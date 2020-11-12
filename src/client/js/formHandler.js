@@ -5,7 +5,7 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+        // Client.checkForName(formText)
 
     console.log("::: Form Submitted :::")
     return fetch(`${baseUrl}/sentiment?text=${formText}`)
@@ -28,7 +28,7 @@ function getList(list) {
                 const htmlItem = `
                 <tr>
                     <td>${item.form}</td>
-                    <td>${item.type}</td>
+                    <br><td>${item.type}</td>
                     <td>${item.score_tag}</td>
                 </tr>
             `;
@@ -37,7 +37,7 @@ function getList(list) {
         }
     }
     if (listItems.length > 0) {
-        return `<div> $ {listItems.join(" ")}
+        return `<div> <br>${listItems.join(" ")}<br>
         </div>`;
     } else {
         return "<span>No items found</span>";
@@ -45,28 +45,25 @@ function getList(list) {
 }
 
 function updateUI(data, formText) {
-    const sentimentedEntityList = `<div> ${getList(data.sentimented_entity_list)} </div>`;
+    const sentimentedEntityList = `<h2>Sentimented entity list</h2>
+    <div> ${getList(data.sentimented_entity_list)} </div>`;
     const sentimentedConceptList = `
     <div class='result-section'>
         <h2>Sentimented concept list</h2>
-        ${getList(data.sentimented_concept_list)}
+        <br>${getList(data.sentimented_concept_list)}<br>
     </div>
     `;
     const htmlTable = `
     <div class="result-section">
         <h2>Overall results</h2>
-        <table class='data-table'>
             <tr>
                 <th>Score tag</th>
                 <th>Agreement</th>
-                <th>Confidence</th>
             </tr>
             <tr>
                 <td>${data.score_tag}</td>
                 <td>${data.agreement}</td>
-                <td>${data.confidence}</td>
             </tr>
-        </table>
     </div>
     `;
 
