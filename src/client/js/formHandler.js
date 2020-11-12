@@ -37,7 +37,7 @@ function getList(list) {
         }
     }
     if (listItems.length > 0) {
-        return `<div> <br>${listItems.join(" ")}<br>
+        return `<div> <br>${listItems.join('\n')}<br>
         </div>`;
     } else {
         return "<span>No items found</span>";
