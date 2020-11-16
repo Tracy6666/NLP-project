@@ -7,11 +7,14 @@ import './styles/form.scss'
 import './styles/footer.scss'
 import './styles/header.scss'
 
-console.log(checkForName);
+//console.log(checkForName);
 
 alert("I EXIST")
-
+document
+    .getElementById("user-form")
+    .addEventListener("submit", function(event) {
+        handleSubmit(event);
+    });
 export {
-    checkForName,
     handleSubmit
 }

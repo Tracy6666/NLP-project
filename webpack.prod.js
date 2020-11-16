@@ -5,9 +5,13 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
-    output: {
+    /*output: {
         libraryTarget: 'var',
         library: 'Client'
+    },*/
+    output: {
+        filename: "[name].[contenthash].js",
+        path: path.resolve(__dirname, "dist"),
     },
     module: {
         rules: [{

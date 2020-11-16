@@ -33,11 +33,12 @@ function getList(list) {
                 </tr>
             `;
                 listItems.push(htmlItem);
+                // listItems.join("\n");
             });
         }
     }
     if (listItems.length > 0) {
-        return `<div> <br>${listItems.join('\n')}<br>
+        return `<div> <br>${listItems.join('<br>')}
         </div>`;
     } else {
         return "<span>No items found</span>";
@@ -50,7 +51,7 @@ function updateUI(data, formText) {
     const sentimentedConceptList = `
     <div class='result-section'>
         <h2>Sentimented concept list</h2>
-        <br>${getList(data.sentimented_concept_list)}<br>
+        ${getList(data.sentimented_concept_list)}<br>
     </div>
     `;
     const htmlTable = `
