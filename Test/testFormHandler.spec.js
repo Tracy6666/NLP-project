@@ -1,4 +1,6 @@
-import { handleSubmit } from './js/formHandler'
+import { handleSubmit } from './src/js/formHandler'
+
+
 describe("Testing the submit functionality", () => {
     // The test() function has two arguments - a string description, and an actual test as a callback function.  
     test("Testing the handleSubmit() function", () => {
@@ -10,7 +12,7 @@ describe("Testing the submit functionality", () => {
         expect(handleSubmit).toBeDefined();
     })
     test("Check if the user input is string or charater type", () => {
-        let formText = document.getElementById('name').value;
+        let formText = 'hello world ';
         expect(typeof(formText) === 'string');
     });
 });
